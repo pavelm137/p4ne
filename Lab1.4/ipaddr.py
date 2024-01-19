@@ -6,8 +6,8 @@ import random
 
 class IPv4RandomNetwork(IPv4Network):
     def __init__(self):
-        rand_network = random.randint(0x0B000000,0xDF000000)
-        rand_prefix = random.randint(8,24)
+        rand_network = random.randint(0x0B000000, 0xDF000000)
+        rand_prefix = random.randint(8, 24)
         IPv4Network.__init__(self, (rand_network, rand_prefix), strict=False)
 
     def regular(self):
