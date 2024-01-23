@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import re
-import readline
 
 import paramiko
 import time
