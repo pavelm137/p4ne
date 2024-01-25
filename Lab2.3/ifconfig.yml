@@ -1,0 +1,17 @@
+- hosts: fs-ga
+  tasks:
+    - name: show all interfaces
+      command: ifconfig -a
+      register: ifcfg1
+
+#    - name: show interim results
+#      debug:
+#          msg: "{{ ifcfg1 }}"
+
+    - name: set fact
+      set_fact: 
+          packets: "{{ ifcfg1['stdout'] | regex_findall('RX packets ([0-9]+)') }}"
+
+    - name: show results
+      debug:
+          msg: "Total RX packets on all interfaces: {{ packets | map('int') | sum }}"

@@ -1,0 +1,6 @@
+lab:
+    hosts:
+        fs-ga:
+            ansible_host: 10.31.70.208
+            ansible_user: marinesku
+            ansible_password: 153481Qwe
